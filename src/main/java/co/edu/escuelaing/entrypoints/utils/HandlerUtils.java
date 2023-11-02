@@ -1,6 +1,5 @@
 package co.edu.escuelaing.entrypoints.utils;
 
-import co.edu.escuelaing.entrypoints.Route;
 import com.amazonaws.services.lambda.runtime.events.APIGatewayProxyRequestEvent;
 
 import java.util.regex.Matcher;

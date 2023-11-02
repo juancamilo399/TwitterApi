@@ -1,6 +1,7 @@
 package co.edu.escuelaing.entrypoints;
 
 import co.edu.escuelaing.entrypoints.utils.HandlerUtils;
+import co.edu.escuelaing.entrypoints.utils.Route;
 import co.edu.escuelaing.user.domain.model.User;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
@@ -49,6 +50,7 @@ public class UserController implements RequestHandler<APIGatewayProxyRequestEven
     private boolean matchMethod(Route route, APIGatewayProxyRequestEvent event) {
         return HandlerUtils.matchMethod(route, event);
     }
+
 
     @Route(method = "GET", path = "/users")
     public APIGatewayProxyResponseEvent getUsers(APIGatewayProxyRequestEvent event, Context context) throws JsonProcessingException {

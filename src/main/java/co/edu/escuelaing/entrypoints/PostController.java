@@ -1,6 +1,7 @@
 package co.edu.escuelaing.entrypoints;
 
 import co.edu.escuelaing.entrypoints.utils.HandlerUtils;
+import co.edu.escuelaing.entrypoints.utils.Route;
 import co.edu.escuelaing.post.domain.model.Post;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.LambdaLogger;
@@ -19,7 +20,6 @@ public class PostController implements RequestHandler<APIGatewayProxyRequestEven
 
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final HashMap<Long, Post> memory = new HashMap<>();
-
 
     @Override
     public APIGatewayProxyResponseEvent handleRequest(APIGatewayProxyRequestEvent event, Context context) {
@@ -55,7 +55,7 @@ public class PostController implements RequestHandler<APIGatewayProxyRequestEven
     }
 
     @Route(method = "POST", path = "/posts")
-    public APIGatewayProxyResponseEvent saveUser(APIGatewayProxyRequestEvent event, Context context) throws JsonProcessingException {
+    public APIGatewayProxyResponseEvent savePost(APIGatewayProxyRequestEvent event, Context context) throws JsonProcessingException {
         Post post = objectMapper.readValue(event.getBody(), Post.class);
         memory.put(post.getId(),post);
         return mapApiGatewayResponse(200,objectMapper.writeValueAsString(post));

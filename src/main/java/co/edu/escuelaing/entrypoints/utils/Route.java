@@ -1,4 +1,4 @@
-package co.edu.escuelaing.entrypoints;
+package co.edu.escuelaing.entrypoints.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
