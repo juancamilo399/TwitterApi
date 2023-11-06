@@ -43,3 +43,42 @@ A continuación se muestran evidencias de las lambdas y el apigateway creado.
 ![lambda2.png](images%2Flambda2.png)
 ### ApiGateway creado
 ![aoi.png](images%2Faoi.png)
+
+
+### Métodos soportados
+A continuación se listan los métodos soportados, junto con las rutas y métodos HTTP definidos para cada uno de los
+recursos
+
+**Recurso Usuarios :**
+
+| Método HTTP | Path            | Descripción                                            |
+|-------------|-----------------|--------------------------------------------------------|
+| POST        | /users          | Registrar un nuevo usuario                             |
+| GET         | /users          | Obtener la información de todos los usuarios           |
+| GET         | /users/{userId} | Obtener la información del usuario dado un id `userId` |
+
+**Recurso Posts:**
+
+| Método HTTP | Path                  | Descripción                                           |
+|-------------|-----------------------|-------------------------------------------------------|
+| POST        | /tweets               | Registrar un nuevo post                               |
+| GET         | /tweets               | Obtener la información de todos los posts registrados |
+
+### Evidencias de uso
+
+Los recursos expuestos pueden utilizarse mediante la siguiente [url](https://8t5lkf00zg.execute-api.us-east-1.amazonaws.com/default).
+
+**Register user**
+![user post.png](images%2Fuser%20post.png)
+
+**Get users**
+![users.png](images%2Fusers.png)
+
+**Find user**
+![user.png](images%2Fuser.png)
+
+**Create post**
+![posts post.png](images%2Fposts%20post.png)
+
+**Get post**
+![posts.png](images%2Fposts.png)
