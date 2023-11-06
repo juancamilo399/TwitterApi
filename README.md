@@ -6,13 +6,12 @@ simples de una aplicacion como Twitter, esto usando servicios en la nube
 como Aws Lambda, ApiGateway y Dynamo junto con Java como lenguaje de programacion.
 
 ## Arquitectura utilizada
-La arquitectura de la aplicación se compone de dos microservicios para definir las funcionalidades
-de usuarios y posts, estos estan contruidos usando funciones lambdas donde el acceso a los recuros expuestos se controlan mediante un ApiGateway.
+La arquitectura de la aplicación se compone de dos microservicios para definir las funcionalidades de dos dominios claves de una aplicacion tipo Twitter siendo estos dominios el domionio de usuarios y posts, estos microservicios estan contruidos usando funciones lambdas donde el acceso a los recuros expuestos se controlan mediante un ApiGateway.
 A continuación se presenta un diagrama con la arquitectura.
 ![memory.jpg](images%2Fmemory.jpg)
 
 En la arquitectura anterior se observa la falta de un mecanismo que permita sincronizar la informacion
-de un dominio en otro, por ejemplo cuando un usuario cree un post este sea creado tambien en el dominio de posts.
+de un dominio en otro, por ejemplo cuando un usuario cree un post este sea creado tambien en el dominio de posts y asi poder acceder a la informacion desde este dominio, manteniendo un bajo acoplamiento al tener una arquitectura guiada por el dominio o DDD.
 Para esto se propone la siguiente arquitectura donde mediante un bus de eventos se lograria sincronizar esta informacion.
 ![event.jpg](images%2Fevent.jpg)
 
